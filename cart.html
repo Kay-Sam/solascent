@@ -14,38 +14,54 @@
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg glass-navbar sticky-top" >
-  <div class="container-fluid px-5">
+<nav class="navbar navbar-expand-lg glass-navbar sticky-top">
+  <div class="container-fluid px-4">
 
-    <!-- Logo LEFT -->
-    <a class="navbar-brand fw-bold fs-3 text-danger logo" href="index.html">SolaScent</a>
+    <!-- Logo -->
+    <a class="navbar-brand fw-bold fs-3 text-danger logo" href="#">
+      SolaScent
+    </a>
 
-    <!-- Hamburger RIGHT -->
-    <button class="navbar-toggler" type="button"
-      data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false"
-      aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <!-- Right Icons (Mobile) -->
+    <div class="d-flex align-items-center d-lg-none">
 
-    <!-- Menu Links -->
+      <!-- Cart Icon -->
+      <a href="cart.html" class="mobile-cart me-3 position-relative">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cart-count" class="cart-badge">0</span>
+      </a>
+
+      <!-- Hamburger -->
+      <button class="navbar-toggler" type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+    </div>
+
+    <!-- Menu -->
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto align-items-lg-center">
+
         <li class="nav-item">
           <a class="nav-link fw-medium" href="index.html">Home</a>
         </li>
-        <li class="nav-item ms-lg-3">
-        <a class="btn btn-danger rounded-pill px-4 d-flex align-items-center" href="cart.html">
-          <i class="fas fa-shopping-cart me-2"></i>
-          Cart <span id="cart-count" class="ms-1">0</span>
-        </a>
 
+        <!-- Desktop Cart Button -->
+        <li class="nav-item ms-lg-3 d-none d-lg-block">
+          <a class="btn btn-danger rounded-pill px-4 d-flex align-items-center" href="cart.html">
+            <i class="fas fa-shopping-cart me-2"></i>
+            Cart <span id="cart-count" class="ms-1">0</span>
+          </a>
         </li>
+
       </ul>
     </div>
 
   </div>
 </nav>
+
 <!-- Navbar End -->
 <section class="cart-page">
   <h2>Your Cart</h2>
