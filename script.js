@@ -36,18 +36,42 @@ function saveCart(){
 }
 
 function updateCart(){
-  let count = cart.reduce((s,i)=>s+i.qty,0);
-  document.querySelectorAll("#cart-count").forEach(el=>el.innerText=count);
+  let count = cart.reduce((s,i)=>s + i.qty, 0);
+
+  // Update cart badge (hide when empty like professional sites)
+  document.querySelectorAll("#cart-count").forEach(el => {
+    el.innerText = count;
+    el.style.display = count > 0 ? "inline-block" : "none";
+  });
 
   let items = document.getElementById("cart-items");
+  let totalBox = document.getElementById("total");
+  let checkoutBtn = document.getElementById("checkout-btn");
+
   if(!items) return;
 
-  items.innerHTML="";
-  let total=0;
+  // ✅ EMPTY CART STATE
+  if(cart.length === 0){
+    items.innerHTML = `
+      <div class="empty-cart">
+        
+        <h3>Cart is empty<i class="fas fa-shopping-cart"></i></h3>
+        <p>Looks like you haven’t added anything yet.</p>
+        <a href="index.html" class="shop-btn">Shop Now</a>
+      </div>
+    `;
+    totalBox.style.display = "none";
+    checkoutBtn.style.display = "none";
+    return;
+  }
+
+  // ✅ CART HAS ITEMS
+  items.innerHTML = "";
+  let total = 0;
 
   cart.forEach(i=>{
-    total += i.price*i.qty;
-    items.innerHTML+=`
+    total += i.price * i.qty;
+    items.innerHTML += `
       <div class="cart-item">
         <span>${i.name}</span>
         <div class="qty">
@@ -55,12 +79,15 @@ function updateCart(){
           ${i.qty}
           <button onclick="increase('${i.name}')">+</button>
         </div>
-        <span>₦${i.price*i.qty}</span>
+        <span>₦${(i.price * i.qty).toLocaleString()}</span>
         <span class="remove" onclick="removeItem('${i.name}')">✖</span>
-      </div>`;
+      </div>
+    `;
   });
 
-  document.getElementById("total").innerText="Total: ₦"+total;
+  totalBox.style.display = "block";
+  checkoutBtn.style.display = "inline-block";
+  totalBox.innerText = "Total: ₦" + total.toLocaleString();
 }
 
 function checkout(){
@@ -107,3 +134,4 @@ window.addEventListener('scroll', () => {
     whatsappBtn.classList.remove('show');
   }
 });
+
