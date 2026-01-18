@@ -380,7 +380,7 @@ body{
     background:#ff4d6d;
 }
 .cta{
-  background:linear-gradient(135deg,#ff4d6d,#970606);
+  background:linear-gradient(135deg,#ff4d6d,#ff2982);
   color:#fff;
   padding:90px 8%;
   text-align:center;
@@ -401,7 +401,7 @@ body{
   display:inline-flex;
   align-items:center;
   gap:10px;
-  background:#0a864c;
+  background:#0a8d50;
   color:#fff;
   padding:15px 35px;
   border-radius:40px;
