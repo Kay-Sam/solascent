@@ -307,7 +307,7 @@ body{
 /* Responsive */
 @media (max-width: 900px) {
   .container {
-    flex-direction: column;
+    flex-direction: column-reverse;
     text-align: center;
     overflow: hidden;
   }
