@@ -178,6 +178,7 @@ body{
   border-radius: 50px;
   cursor: pointer;
   transition: 0.3s all ease;
+  text-decoration: none;
 }
 
 .primary-btn:hover {
