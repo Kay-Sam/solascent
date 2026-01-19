@@ -203,6 +203,46 @@ body{
 }
 
 
+
+.perfume-container {
+  position: relative;
+  z-index: 2;
+  transform: scale(1.5);
+  transform-origin: bottom center;
+  overflow: visible; /* allow natural breathing room */
+  transition: transform 0.5s ease;
+}
+
+.perfume-container:hover {
+  transform: scale(1.55) rotate(-3deg); /* subtle hover scale */
+}
+
+.perfume-img {
+  max-width: 450px;
+  display: block;
+  margin-top: 80px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column-reverse;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+
+.hero-text .subtitle {
+  font-size: 1rem;
+
+}
+  .perfume-img {
+    max-width: 250px;
+  }
+}
 /* ===== ABOUT SECTION ===== */
 .about {
   padding: 80px 8%;
@@ -282,42 +322,6 @@ body{
 
   .about-text p {
     font-size: 1rem;
-  }
-}
-
-.perfume-container {
-  position: relative;
-  z-index: 2;
-  transform: scale(1.5);
-  transform-origin: bottom center;
-  overflow: visible; /* allow natural breathing room */
-  transition: transform 0.5s ease;
-}
-
-.perfume-container:hover {
-  transform: scale(1.55) rotate(-3deg); /* subtle hover scale */
-}
-
-.perfume-img {
-  max-width: 450px;
-  display: block;
-  margin-top: 80px;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .container {
-    flex-direction: column-reverse;
-    text-align: center;
-    overflow: hidden;
-  }
-  
-  .hero-text h1 {
-    font-size: 2.2rem;
-  }
-
-  .perfume-img {
-    max-width: 250px;
   }
 }
 
